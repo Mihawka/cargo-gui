@@ -1,5 +1,6 @@
 # cargo-gui
 An easy Rust project manager made with GTK.
+[Home image](https://github.com/Mihawka/cargo-gui/blob/main/Capture%20d%E2%80%99%C3%A9cran%202021-05-23%20003958.png)
 
 ## Features
 - [ ] Project tree list

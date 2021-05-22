@@ -1,5 +1,5 @@
 # cargo-gui
-An easy Rust project manager made with GTK. Now only french !
+An easy Rust project manager made with GTK. Currently in dev !
 
 ![Home image](https://github.com/Mihawka/cargo-gui/blob/main/Capture%20d%E2%80%99%C3%A9cran%202021-05-23%20003958.png)
 
@@ -13,3 +13,9 @@ An easy Rust project manager made with GTK. Now only french !
 
 ## Instructions
 Launch cargo gui and let's dev !
+
+## Dev-Instructions
+To build and run on Windows launch 
+└ RUNx32.bat
+└ RUNx64.bat
+On Windows you to install [GTK](https://www.gtk.org/docs/installations/windows/) at first manually !

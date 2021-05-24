@@ -10,13 +10,15 @@ impl Project {
     pub fn create_project(&self) {
         let dir = format!("{}/{}", self.directory, self.name);
         let lib = match self.is_lib {
-            true => { "--lib" }
-            false => { "--bin" }
+            true => "--lib",
+            false => "--bin",
         };
 
-        Command::new("cargo")
-            .args(&["new", dir.as_str(), lib])
-            .output()
-            .unwrap();
-    } 
+        println!("{}", dir);
+        println!("{}", lib);
+        // Command::new("cargo")
+        //     .args(&["new", dir.as_str(), lib])
+        //     .output()
+        //     .unwrap();
+    }
 }

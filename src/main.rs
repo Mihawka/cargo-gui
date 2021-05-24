@@ -12,9 +12,15 @@ fn main() {
     //====================================================================================================
     let glade_src = include_str!("./Basic UI.glade");
     let builder = gtk::Builder::from_string(glade_src);
+    //====================================================================================================
+
+
     // MAIN WINDOW =======================================================================================
     let window: Window = builder.get_object("applicationGtk").unwrap();
     let button_create_project: Button = builder.get_object("button-project-create").unwrap();
+    //====================================================================================================
+
+
     // WINDOW PROJECT ====================================================================================
     let window_project: Window = builder.get_object("window-project-create").unwrap();
     let projectwindow_button_create: Button =
@@ -27,12 +33,16 @@ fn main() {
         .unwrap();
     let projectwindow_switch_lib: Switch = builder.get_object("projectwindow-switch-lib").unwrap();
     let projectwindow_entry_dir: Entry = builder.get_object("projectwindow_entry_dir").unwrap();
+    //====================================================================================================
+
+
     // WINDOW FILE SELECT ================================================================================
     let window_filechooser: Window = builder.get_object("window-filechooser").unwrap();
     let filewindow_chooser: FileChooserWidget = builder.get_object("filewindow-chooser").unwrap();
     let filewindow_quit: Button = builder.get_object("filewindow-button-quit").unwrap();
     let filewindow_open: Button = builder.get_object("filewindow-button-open").unwrap();
     //====================================================================================================
+
 
     // BUTTON HOME WINDOW - Create Project
     let window_clone = window.clone();
@@ -52,8 +62,9 @@ fn main() {
     projectwindow_button_create.connect_clicked(move |_| {
         window_clone.show();
         window_project_clone.hide();
+
         let data = Project {
-            name: projectwindow_entry_name_clone.to_string(),
+            name: projectwindow_entry_name_clone.get_text().to_string(),
             directory: projectwindow_entry_dir_clone.get_text().to_string().clone(),
             is_lib: projectwindow_switch_lib_clone.get_active(),
         };

@@ -18,8 +18,5 @@ impl Project {
             .args(&["new", dir.as_str(), lib])
             .output()
             .unwrap();
-
-        let raw_output = String::from_utf8(output.stdout).unwrap();
-        println!("{}", raw_output);
     }
 }

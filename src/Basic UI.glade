@@ -2,7 +2,97 @@
 <!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkApplicationWindow" id="applicationGtk">
+  <object class="GtkWindow" id="window-alert">
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="alert-label-info">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="margin-top">15</property>
+            <property name="margin-bottom">15</property>
+            <property name="label" translatable="yes">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</property>
+            <property name="wrap">True</property>
+            <property name="max-width-chars">70</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="alert-button-quit">
+            <property name="label" translatable="yes">Ok</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="margin-start">100</property>
+            <property name="margin-end">100</property>
+            <property name="margin-bottom">10</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="title" translatable="yes">ATTENTION</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkApplicationWindow" id="window-fileChooser">
+    <property name="can-focus">False</property>
+    <property name="window-position">center</property>
+    <child>
+      <object class="GtkFileChooserWidget" id="fileChooser-chooser">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="action">select-folder</property>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="title" translatable="yes">Sélectionnez un fichier</property>
+        <child>
+          <object class="GtkButton" id="fileChooser-button-quit">
+            <property name="label" translatable="yes">Annuler</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="fileChooser-button-open">
+            <property name="label" translatable="yes">Ouvrir</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkApplicationWindow" id="window-main">
     <property name="width-request">900</property>
     <property name="height-request">600</property>
     <property name="can-focus">False</property>
@@ -131,7 +221,7 @@
         <property name="subtitle" translatable="yes">Alpha 0.0.1</property>
         <property name="show-close-button">True</property>
         <child>
-          <object class="GtkButton" id="button-project-create">
+          <object class="GtkButton" id="main-button-createProject">
             <property name="label" translatable="yes">Créer un projet</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -141,45 +231,7 @@
       </object>
     </child>
   </object>
-  <object class="GtkApplicationWindow" id="window-filechooser">
-    <property name="can-focus">False</property>
-    <property name="window-position">center</property>
-    <child>
-      <object class="GtkFileChooserWidget" id="filewindow-chooser">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="action">select-folder</property>
-      </object>
-    </child>
-    <child type="titlebar">
-      <object class="GtkHeaderBar">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="title" translatable="yes">Sélectionnez un fichier</property>
-        <child>
-          <object class="GtkButton" id="filewindow-button-quit">
-            <property name="label" translatable="yes">Annuler</property>
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="filewindow-button-open">
-            <property name="label" translatable="yes">Ouvrir</property>
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-          </object>
-          <packing>
-            <property name="pack-type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
-  <object class="GtkApplicationWindow" id="window-project-create">
+  <object class="GtkApplicationWindow" id="window-projectCreate">
     <property name="can-focus">False</property>
     <property name="resizable">False</property>
     <property name="window-position">center</property>
@@ -204,7 +256,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry" id="projectwindow-entry-name">
+          <object class="GtkEntry" id="projectCreate-entry-name">
             <property name="name">entry-project-name</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -249,7 +301,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="projectwindow-switch-lib">
+          <object class="GtkSwitch" id="projectCreate-switch-lib">
             <property name="name">switch-project-lib</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -268,7 +320,7 @@
             <property name="margin-end">10</property>
             <property name="margin-bottom">5</property>
             <child>
-              <object class="GtkEntry" id="projectwindow_entry_dir">
+              <object class="GtkEntry" id="projectCreate-entry-dir">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
               </object>
@@ -279,7 +331,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="projectwindow_button_dir">
+              <object class="GtkButton" id="projectCreate-button-dir">
                 <property name="label" translatable="yes">D</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -305,7 +357,7 @@
         <property name="can-focus">False</property>
         <property name="title" translatable="yes">Créer un projet</property>
         <child>
-          <object class="GtkButton" id="projectwindow-button-cancel">
+          <object class="GtkButton" id="projectCreate-button-cancel">
             <property name="label" translatable="yes">Annuler</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -313,7 +365,7 @@
           </object>
         </child>
         <child>
-          <object class="GtkButton" id="projectwindow-button-create">
+          <object class="GtkButton" id="projectCreate-button-create">
             <property name="label" translatable="yes">Créer</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>

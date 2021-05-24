@@ -1,4 +1,4 @@
-use gtk::{Button, ButtonExt, Entry, EntryExt, FileChooserExt, FileChooserWidget, Inhibit, Switch, SwitchExt, WidgetExt, Window, prelude::BuilderExtManual};
+use gtk::{Button, ButtonExt, Entry, EntryExt, FileChooserExt, FileChooserWidget, Inhibit, Label, Switch, SwitchExt, WidgetExt, Window, prelude::BuilderExtManual};
 
 use crate::data::project::Project;
 
@@ -16,31 +16,38 @@ fn main() {
 
 
     // MAIN WINDOW =======================================================================================
-    let window: Window = builder.get_object("applicationGtk").unwrap();
-    let button_create_project: Button = builder.get_object("button-project-create").unwrap();
+    let window: Window = builder.get_object("window-main").unwrap();
+    let button_create_project: Button = builder.get_object("main-button-createProject").unwrap();
     //====================================================================================================
 
 
     // WINDOW PROJECT ====================================================================================
-    let window_project: Window = builder.get_object("window-project-create").unwrap();
+    let window_project: Window = builder.get_object("window-projectCreate").unwrap();
     let projectwindow_button_create: Button =
-        builder.get_object("projectwindow-button-create").unwrap();
+        builder.get_object("projectCreate-button-create").unwrap();
     let projectwindow_button_cancel: Button =
-        builder.get_object("projectwindow-button-cancel").unwrap();
-    let projectwindow_entry_name: Entry = builder.get_object("projectwindow-entry-name").unwrap();
+        builder.get_object("projectCreate-button-cancel").unwrap();
+    let projectwindow_entry_name: Entry = builder.get_object("projectCreate-entry-name").unwrap();
     let projectwindow_button_dir: Button = builder
-        .get_object("projectwindow_button_dir")
+        .get_object("projectCreate-button-dir")
         .unwrap();
-    let projectwindow_switch_lib: Switch = builder.get_object("projectwindow-switch-lib").unwrap();
-    let projectwindow_entry_dir: Entry = builder.get_object("projectwindow_entry_dir").unwrap();
+    let projectwindow_switch_lib: Switch = builder.get_object("projectCreate-switch-lib").unwrap();
+    let projectwindow_entry_dir: Entry = builder.get_object("projectCreate-entry-dir").unwrap();
     //====================================================================================================
 
 
     // WINDOW FILE SELECT ================================================================================
-    let window_filechooser: Window = builder.get_object("window-filechooser").unwrap();
-    let filewindow_chooser: FileChooserWidget = builder.get_object("filewindow-chooser").unwrap();
-    let filewindow_quit: Button = builder.get_object("filewindow-button-quit").unwrap();
-    let filewindow_open: Button = builder.get_object("filewindow-button-open").unwrap();
+    let window_filechooser: Window = builder.get_object("window-fileChooser").unwrap();
+    let filewindow_chooser: FileChooserWidget = builder.get_object("fileChooser-chooser").unwrap();
+    let filewindow_quit: Button = builder.get_object("fileChooser-button-quit").unwrap();
+    let filewindow_open: Button = builder.get_object("fileChooser-button-open").unwrap();
+    //====================================================================================================
+
+
+    // WINDOW ALERT ======================================================================================
+    let window_alert: Window = builder.get_object("window-filechooser").unwrap();
+    let alert_label_info: Label = builder.get_object("alert_label_info").unwrap();
+    let alert_button_quit: Button = builder.get_object("alert-button-quit").unwrap();
     //====================================================================================================
 
 
